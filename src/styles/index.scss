@@ -2,11 +2,11 @@
     --color-primary: #FD377E;
     --color-primary-2: #E34981;
     --color-secondary: #03B898;
-    --grey-4: #121214; /* Fundo mais escuro (Background) */
-    --grey-3: #212529; /* Cards e Header */
-    --grey-2: #343b41; /* Inputs e Seções internas */
-    --grey-1: #868e96; /* Textos secundários */
-    --grey-0: #f8f9fa;
+    --grey-4: #0B0E14; /* Fundo principal (quase preto, mas com profundidade) */
+    --grey-3: #151921; /* Cards e Header (um pouco mais claro que o fundo) */
+    --grey-2: #1C222D; /* Inputs, divisórias e seções internas */
+    --grey-1: #94A3B8; /* Texto secundário (Slate grey) */
+    --grey-0: #F1F5F9;
 
     --font-family: "Inter", serif;
     --font-weight-1: 700;
@@ -29,4 +29,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+p, h1, h2, h3, h4, h5, h6, span, label, button {
+    color: var(--grey-0);
 }
