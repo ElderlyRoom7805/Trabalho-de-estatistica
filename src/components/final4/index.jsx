@@ -21,6 +21,8 @@ export const QuartasFinal = () => {
 
         const resultadosSimulacao = [];
         const listaVencedores = [];
+        console.log(resultadosSimulacao);
+        console.log(listaVencedores);
         const k = 32;
 
         for (let i = 0; i < listaParaSorteio.length; i += 2) {

@@ -17,6 +17,8 @@ export const MataLog = () => {
 
         const resultadosSimulacao = [];
         const listaVencedores = [];
+        console.log(resultadosSimulacao);
+        console.log(listaVencedores);
         const k = 32;
 
         let novosJogadores = [...jogadores];

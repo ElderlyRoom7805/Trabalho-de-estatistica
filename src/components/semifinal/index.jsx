@@ -19,6 +19,8 @@ export const Semifinal = () => {
         const listaParaSorteio = [...classificadosDasQuartas].sort(() => Math.random() - 0.5);
         const resultadosSimulacao = [];
         const listaVencedores = [];
+        console.log(resultadosSimulacao);
+        console.log(listaVencedores);
         const k = 32;
 
         for (let i = 0; i < listaParaSorteio.length; i += 2) {
