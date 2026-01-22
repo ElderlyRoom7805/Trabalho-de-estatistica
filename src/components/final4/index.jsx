@@ -15,28 +15,24 @@ export const QuartasFinal = () => {
     const [historicoDestaRodada, setHistoricoDestaRodada] = useState([]);
 
     useEffect(() => {
-        // Se por algum motivo não houver classificados, não faz nada
         if (classificadosDasOitavas.length < 8) return;
 
-        // 1. SORTEIO (Embaralha os 8 sobreviventes)
         const listaParaSorteio = [...classificadosDasOitavas].sort(() => Math.random() - 0.5);
 
         const resultadosSimulacao = [];
         const listaVencedores = [];
         const k = 32;
 
-        // 2. LOOP DOS 4 DUELOS (Quartas de Final)
         for (let i = 0; i < listaParaSorteio.length; i += 2) {
             const jog1 = listaParaSorteio[i];
             const jog2 = listaParaSorteio[i + 1];
 
-            // CÁLCULOS ESTATÍSTICOS (ELO)
             const expoE = (jog2.rating - jog1.rating) / 400;
             const Ea = 1 / (1 + Math.pow(10, expoE));
             const U = Math.random();
             const venceuJ1 = U < Ea;
 
-            // CÁLCULO DOS NOVOS RATINGS
+
             const nRA = jog1.rating + k * ((venceuJ1 ? 1 : 0) - Ea);
             const nRB = jog2.rating + k * ((venceuJ1 ? 0 : 1) - (1 - Ea));
 
@@ -75,7 +71,7 @@ export const QuartasFinal = () => {
     return (
         <div className={styles.int}>
             <div className={styles.header}>
-                <h1>Quartas de Final (Top 8)</h1>
+                <h1>4° de final</h1>
             </div>
             
             <div className={styles.main}>
