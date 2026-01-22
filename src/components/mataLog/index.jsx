@@ -53,8 +53,12 @@ export const MataLog = () => {
                 novoRb: novoRb.toFixed(1)
             };
 
+            const vencedorAtualizado = venceuJ1 
+                ? { ...jog1, rating: Number(novoRa.toFixed(1)) } 
+                : { ...jog2, rating: Number(novoRb.toFixed(1)) };
+
+            listaVencedores.push(vencedorAtualizado);
             resultadosSimulacao.push(infoDuelo);
-            listaVencedores.push(venceuJ1 ? jog1 : jog2);
             setHistoricoDestaRodada(resultadosSimulacao);
         }
 
