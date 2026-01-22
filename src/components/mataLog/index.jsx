@@ -62,6 +62,18 @@ export const MataLog = () => {
         setVencedoresIds(listaVencedores);
         setJogadores(novosJogadores);
 
+        setJogadores(prev => {
+            return prev.map(jogadorOriginal => {
+                const encontrouDuelo = resultadosSimulacao.find(d => d.j1.id === jogadorOriginal.id || d.j2.id === jogadorOriginal.id);
+                if (encontrouDuelo) {
+                    return encontrouDuelo.j1.id === jogadorOriginal.id 
+                        ? { ...jogadorOriginal, rating: Number(encontrouDuelo.novoRa) }
+                        : { ...jogadorOriginal, rating: Number(encontrouDuelo.novoRb) };
+                }
+                return jogadorOriginal;
+            });
+        });
+
     }, []); 
 
     return (
